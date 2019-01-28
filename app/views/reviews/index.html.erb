@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="text-center text-uppercase">
+    <h1 class="page-header">Reviews</h1>
+  </div>
+  <div>
+  <table class="table">
+        <thead>
+          <tr>
+            <th class="bg bg-info">Rating</th>
+            <th class="bg bg-info">Comment</th>
+            <th colspan="3" class="bg bg-info"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @reviews.each do |review| %>
+            <tr>
+              <td class="text-capitalize text-lg"><%= review.rating%></td>
+              <td><%= review.comment %></td>
+
+
+                  <td><%= link_to 'Show', review,class: "btn btn-primary" %></td>
+                  <td><%= link_to 'Edit', edit_review_path(review),class: "btn btn-success" %></td>
+                  <td><%= link_to 'Destroy', review,class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+  <br>
+
+    <%= link_to 'New Review', new_review_path,class: "btn btn-warning text" %>
+
+</div>
