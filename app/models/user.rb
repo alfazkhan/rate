@@ -3,5 +3,5 @@ class User < ApplicationRecord
             :uniqueness => true,
             presence: true
 
-  
+
 end
