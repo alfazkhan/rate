@@ -4,4 +4,11 @@ class PagesController < ApplicationController
 
   end
 
+  def map
+
+    @var= `python lib/assets/python/test.py "#{"null"}"`
+
+  end
+
+
 end
